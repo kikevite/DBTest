@@ -8,8 +8,6 @@ import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements ListAdapter.OnNotaClickedListener {
 
-    private RecyclerView recyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements ListAdapter.OnNot
         NotasDB.insertNota(n2);
         NotasDB.borrarNota(n1);
 
-        recyclerView = findViewById(R.id.notas_rv);
+        RecyclerView recyclerView = findViewById(R.id.notas_rv);
         RecyclerView.LayoutManager myLayoutManager;
         recyclerView.setHasFixedSize(true);
         myLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
